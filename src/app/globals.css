@@ -1,35 +1,40 @@
 @import "tailwindcss";
 
 :root {
-  /* Base Colors */
-  --background: #050505;
-  --foreground: #fafafa;
+  /* Base Colors - Clean White/Gray */
+  --background: #ffffff;
+  --foreground: #111827;
+  /* Gray 900 */
 
-  /* Primary Brand Colors (Oracle/Blockchain feel - Deep Purple/Blue/Cyan) */
-  --primary: #6366f1;
-  /* Indigo 500 */
+  /* Primary Brand Colors - Royal Blue & Orange (International Style) */
+  --primary: #2563eb;
+  /* Blue 600 */
   --primary-foreground: #ffffff;
 
-  --secondary: #1e1e24;
-  --secondary-foreground: #fafafa;
+  --secondary: #f3f4f6;
+  /* Gray 100 */
+  --secondary-foreground: #111827;
 
-  --accent: #06b6d4;
-  /* Cyan 500 */
-  --accent-foreground: #000000;
+  --accent: #ea580c;
+  /* Orange 600 */
+  --accent-foreground: #ffffff;
 
-  --muted: #27272a;
-  --muted-foreground: #a1a1aa;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  /* Gray 500 */
 
-  --border: #27272a;
-  --input: #27272a;
-  --ring: #6366f1;
+  --border: #e5e7eb;
+  /* Gray 200 */
+  --input: #e5e7eb;
+  --ring: #2563eb;
 
-  /* Card/Glass Styles */
-  --card: #0a0a0a;
-  --card-foreground: #fafafa;
+  /* Card Styles - Flat, Bordered */
+  --card: #ffffff;
+  --card-foreground: #111827;
 
-  /* Radius */
-  --radius: 0.5rem;
+  /* Radius - Sharp/Minimal */
+  --radius: 0rem;
+  /* Sharp corners for Swiss style */
 }
 
 @theme inline {
@@ -67,23 +72,13 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
-
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--muted);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--muted-foreground);
+/* Grid Background Utility */
+.bg-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
 }

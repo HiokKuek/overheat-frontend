@@ -5,42 +5,51 @@ export default function DashboardPage() {
     return (
         <div className="min-h-screen bg-background flex flex-col">
             <Navbar />
-            <main className="flex-grow container mx-auto px-4 pt-32 pb-20">
-                <div className="mb-8">
-                    <h1 className="text-3xl font-bold mb-2">Dashboard</h1>
-                    <p className="text-muted-foreground">Manage your API keys and view usage statistics.</p>
+            <main className="flex-grow container mx-auto px-6 pt-32 pb-20">
+                <div className="mb-12 border-b border-foreground/10 pb-6 flex justify-between items-end">
+                    <div>
+                        <h1 className="text-4xl font-bold uppercase tracking-tight mb-2">Dashboard</h1>
+                        <p className="text-muted-foreground font-mono text-sm">ID: 0x8f...3k9a • STATUS: ACTIVE</p>
+                    </div>
+                    <div className="text-right hidden md:block">
+                        <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Current Cycle</p>
+                        <p className="text-xl font-mono">245ms</p>
+                    </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="p-6 rounded-xl bg-card border border-border">
-                        <h3 className="text-sm font-medium text-muted-foreground mb-2">Total Requests</h3>
-                        <p className="text-3xl font-bold">2,543,901</p>
-                        <div className="mt-4 h-2 w-full bg-secondary rounded-full overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div className="p-8 bg-secondary border border-foreground/5">
+                        <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">Total Requests</h3>
+                        <p className="text-5xl font-bold tracking-tighter">2.5M</p>
+                        <div className="mt-6 h-1 w-full bg-foreground/10">
                             <div className="h-full bg-primary w-[75%]"></div>
                         </div>
                     </div>
 
-                    <div className="p-6 rounded-xl bg-card border border-border">
-                        <h3 className="text-sm font-medium text-muted-foreground mb-2">Active Feeds</h3>
-                        <p className="text-3xl font-bold">12</p>
+                    <div className="p-8 bg-secondary border border-foreground/5">
+                        <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">Active Feeds</h3>
+                        <p className="text-5xl font-bold tracking-tighter">12</p>
                     </div>
 
-                    <div className="p-6 rounded-xl bg-card border border-border">
-                        <h3 className="text-sm font-medium text-muted-foreground mb-2">Credits Remaining</h3>
-                        <p className="text-3xl font-bold">$450.00</p>
+                    <div className="p-8 bg-secondary border border-foreground/5">
+                        <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">Balance</h3>
+                        <p className="text-5xl font-bold tracking-tighter">$450</p>
                     </div>
                 </div>
 
-                <div className="mt-8 p-6 rounded-xl bg-card border border-border">
-                    <h3 className="text-lg font-semibold mb-4">Recent Activity</h3>
-                    <div className="space-y-4">
-                        {[1, 2, 3].map((i) => (
-                            <div key={i} className="flex items-center justify-between py-2 border-b border-border/50 last:border-0">
+                <div className="border border-foreground/10">
+                    <div className="bg-secondary px-6 py-4 border-b border-foreground/10 flex justify-between items-center">
+                        <h3 className="font-bold uppercase tracking-wider text-sm">Recent Activity</h3>
+                        <button className="text-xs font-bold uppercase hover:text-primary">View All</button>
+                    </div>
+                    <div className="divide-y divide-foreground/10">
+                        {[1, 2, 3, 4, 5].map((i) => (
+                            <div key={i} className="px-6 py-4 flex items-center justify-between hover:bg-secondary/50 transition-colors">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                                    <span className="font-medium">ETH/USD Price Update</span>
+                                    <div className="w-2 h-2 bg-green-500"></div>
+                                    <span className="font-mono text-sm">ETH/USD ORACLE UPDATE</span>
                                 </div>
-                                <span className="text-sm text-muted-foreground">2 mins ago</span>
+                                <span className="text-xs font-mono text-muted-foreground">14:23:0{i} UTC</span>
                             </div>
                         ))}
                     </div>
