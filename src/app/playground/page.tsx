@@ -190,11 +190,11 @@ export default function PlaygroundPage() {
                             </div>
                         </div>
 
-                        <div className="flex-grow flex items-center justify-center bg-black/5">
+                        <div className="flex-grow flex items-start justify-center bg-black/5 overflow-x-hidden overflow-y-scroll">
                             {
-                                predicted ? <p className="text-muted-foreground text-sm text-wrap w-full">
-                                    {JSON.stringify(mockPrediction)}
-                                </p> : <div className="text-center text-muted-foreground">
+                                predicted ? <pre className="text-muted-foreground text-sm text-wrap w-full">
+                                    {JSON.stringify(mockPrediction, undefined, 2)}
+                                </pre> : <div className="text-center text-muted-foreground">
                                     <Play className="w-12 h-12 mx-auto mb-4 opacity-20" />
                                     <p className="text-sm">Enter a prediction and click Run to analyze</p>
                                 </div>
