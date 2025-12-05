@@ -5,10 +5,54 @@ import { Footer } from "@/components/layout/Footer";
 import { useState } from "react";
 import { Play, ChevronDown, Calendar } from "lucide-react";
 
+const mockPrediction = {
+    "qid":  "ABC-124cs24355334r",
+    "question":  "Will Bitcoin trade above 120,000 by the end of December 2025?",
+    "forecast":  {
+                    "question":  "Will Bitcoin trade above 120,000 by the end of December 2025?",
+                    "forecast":  {
+                                    "probability_percent":  "45.0%",
+                                    "confidence":  "medium",
+                                    "forecast_start_date":  "2025-12-05T00:00:00Z",
+                                    "forecast_end_date":  "2025-12-31T00:00:00Z",
+                                    "forecast_thesis":  "The probability of Bitcoin trading above $120,000 by the end of December 2025 is estimated at 45%. This outlook is based on the current price action and investor sentiment, which show some bullish trends, but significant resistance remains at higher price levels. The bull-case scenario involves continued institutional adoption and favorable regulatory developments, potentially pushing prices significantly higher. Conversely, the bear-case scenario includes market corrections or negative regulatory news that could hinder price growth. This probability applies from 2025-12-05 to 2025-12-31.",
+                                    "key_risks":  [
+                                                        "Market corrections",
+                                                        "Regulatory changes",
+                                                        "Investor sentiment shifts"
+                                                    ],
+                                    "supporting_articles":  [
+                                                                {
+                                                                    "url":  "https://decrypt.co/350988/ripple-ceo-brad-garlinghouse-expects-bitcoin-180k-next-year",
+                                                                    "title":  "Ripple CEO Brad Garlinghouse Expects Bitcoin to Hit $180K Next Year",
+                                                                    "published_at":  "2025-12-04T22:04:45+00:00",
+                                                                    "site_tier":  "news",
+                                                                    "doc_type":  "news"
+                                                                },
+                                                                {
+                                                                    "url":  "https://cointelegraph.com/news/bitcoin-price-action-investor-sentiment-point-to-bullish-december?utm_source=rss_feed\u0026utm_medium=rss\u0026utm_campaign=rss_partner_inbound",
+                                                                    "title":  "Bitcoin price action, investor sentiment point to bullish December",
+                                                                    "published_at":  "2025-12-04T19:47:12+00:00",
+                                                                    "site_tier":  "news",
+                                                                    "doc_type":  "news"
+                                                                },
+                                                                {
+                                                                    "url":  "https://crypto.news/ripples-garlinghouse-bitcoin-could-hit-180k-by-end-of-2026/",
+                                                                    "title":  "Rippleâs Brad Garlinghouse: Bitcoin could hit $180K by end of 2026",
+                                                                    "published_at":  "2025-12-04T09:54:25+00:00",
+                                                                    "site_tier":  "news",
+                                                                    "doc_type":  "news"
+                                                                }
+                                                            ]
+                                }
+                }
+};
+
 export default function PlaygroundPage() {
     const [activeTab, setActiveTab] = useState("Form");
     const [activeEndpoint, setActiveEndpoint] = useState("/predictions");
     const [outputTab, setOutputTab] = useState("Preview");
+    const [predicted, setPredicted] = useState(false);
 
     return (
         <div className="min-h-screen flex flex-col">
@@ -64,8 +108,8 @@ export default function PlaygroundPage() {
                                     <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">prompt_raw <span className="text-[10px] opacity-50">string</span></label>
                                     <textarea
                                         className="w-full p-4 bg-background/50 border border-foreground/10 focus:border-primary outline-none transition-colors font-mono text-sm min-h-[100px] resize-none"
-                                        placeholder="Will Bitcoin reach $100,000 by end of 2025?"
-                                        defaultValue="Will Bitcoin reach $100,000 by end of 2025?"
+                                        placeholder="Will Bitcoin trade above 120,000 by the end of December 2025?"
+                                        defaultValue="Will Bitcoin trade above 120,000 by the end of December 2025?"
                                     />
                                     <p className="text-xs text-muted-foreground">The question to ask the oracle</p>
                                 </div>
@@ -122,7 +166,7 @@ export default function PlaygroundPage() {
                         </div>
 
                         <div className="p-4 border-t border-foreground/10 bg-secondary/30">
-                            <button className="w-full py-3 bg-primary text-primary-foreground font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                            <button className="w-full py-3 bg-primary text-primary-foreground font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors flex items-center justify-center gap-2" onClick={() => setPredicted(true)}>
                                 <Play className="w-4 h-4 fill-current" />
                                 Run
                             </button>
@@ -147,10 +191,16 @@ export default function PlaygroundPage() {
                         </div>
 
                         <div className="flex-grow flex items-center justify-center bg-black/5">
-                            <div className="text-center text-muted-foreground">
-                                <Play className="w-12 h-12 mx-auto mb-4 opacity-20" />
-                                <p className="text-sm">Enter a prediction and click Run to analyze</p>
-                            </div>
+                            {
+                                predicted ? <p className="text-muted-foreground text-sm text-wrap w-full">
+                                    {JSON.stringify(mockPrediction)}
+                                </p> : <div className="text-center text-muted-foreground">
+                                    <Play className="w-12 h-12 mx-auto mb-4 opacity-20" />
+                                    <p className="text-sm">Enter a prediction and click Run to analyze</p>
+                                </div>
+                                    
+                            }
+                            
                         </div>
                     </div>
                 </div>
