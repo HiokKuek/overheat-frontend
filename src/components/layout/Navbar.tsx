@@ -41,7 +41,7 @@ export function Navbar() {
                         href="/dashboard"
                         className="px-6 py-3 text-sm font-bold uppercase tracking-wider bg-foreground text-background hover:bg-primary transition-colors"
                     >
-                        Start Building
+                        Dapp
                     </Link>
                 </div>
 
