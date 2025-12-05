@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { DashboardCharts } from "@/components/dashboard/DashboardCharts";
 
 export default function DashboardPage() {
     return (
@@ -36,6 +37,8 @@ export default function DashboardPage() {
                         <p className="text-5xl font-bold tracking-tighter">$450</p>
                     </div>
                 </div>
+
+                <DashboardCharts />
 
                 <div className="border border-foreground/10">
                     <div className="bg-secondary px-6 py-4 border-b border-foreground/10 flex justify-between items-center">
