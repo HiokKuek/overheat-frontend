@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Hexagon } from "lucide-react";
+import Image from 'next/image';
+import OverheatLogo from '@/../public/overheat.svg';
 
 const navItems = [
     { name: "Dashboard", href: "/dashboard" },
@@ -21,7 +23,7 @@ export function Navbar() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-3 group">
                     <div className="flex items-center justify-center w-10 h-10 bg-foreground text-background rounded-none group-hover:bg-primary transition-colors">
-                        <Hexagon className="w-6 h-6" />
+                        <Image src={OverheatLogo} alt="Overheat logo" width={600} height={600} />
                     </div>
                     <span className="font-bold text-xl tracking-tight uppercase">Overheat</span>
                 </Link>

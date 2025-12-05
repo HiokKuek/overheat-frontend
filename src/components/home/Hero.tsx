@@ -54,17 +54,6 @@ export function Hero() {
                         </div>
                     </motion.div>
                 </div>
-
-                {/* Abstract Data Visualization */}
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full hidden lg:flex flex-col justify-center gap-2 opacity-10 pointer-events-none">
-                    {[...Array(20)].map((_, i) => (
-                        <div
-                            key={i}
-                            className="h-1 bg-foreground w-full"
-                            style={{ width: `${Math.random() * 100}%`, opacity: Math.random() }}
-                        />
-                    ))}
-                </div>
             </div>
         </section>
     );
