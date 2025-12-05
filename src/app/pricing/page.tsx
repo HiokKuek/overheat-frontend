@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 
 export default function PricingPage() {
     return (
-        <div className="min-h-screen bg-background flex flex-col">
+        <div className="min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-grow container mx-auto px-6 pt-32 pb-20">
                 <div className="text-center max-w-3xl mx-auto mb-20">

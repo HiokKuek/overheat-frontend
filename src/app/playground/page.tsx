@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function PlaygroundPage() {
     return (
-        <div className="min-h-screen bg-background flex flex-col">
+        <div className="min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-grow container mx-auto px-6 pt-32 pb-20">
                 <div className="flex flex-col md:flex-row gap-12 h-[600px]">

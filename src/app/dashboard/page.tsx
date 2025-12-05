@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function DashboardPage() {
     return (
-        <div className="min-h-screen bg-background flex flex-col">
+        <div className="min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-grow container mx-auto px-6 pt-32 pb-20">
                 <div className="mb-12 border-b border-foreground/10 pb-6 flex justify-between items-end">

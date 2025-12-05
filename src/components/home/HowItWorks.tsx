@@ -22,7 +22,7 @@ export function HowItWorks() {
     ];
 
     return (
-        <section className="py-32 bg-background">
+        <section className="py-32">
             <div className="container mx-auto px-6">
                 <div className="mb-20 border-b-2 border-foreground pb-8">
                     <h2 className="text-4xl font-bold uppercase tracking-tight">System Architecture</h2>
